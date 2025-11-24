@@ -38,6 +38,10 @@ const DEFAULT_CONFIG = {
         enabled: false,
         title: 'HUSH',
         iconUrl: ''
+    },
+    privacy: {
+        hideSearchQueries: true,
+        sanitizeEmails: true
     }
 };
 
@@ -61,6 +65,9 @@ const listDotInclude = document.getElementById('list-dot-include');
 const presetSelect = document.getElementById('preset-select');
 const savePresetBtn = document.getElementById('save-preset-btn');
 const deletePresetBtn = document.getElementById('delete-preset-btn');
+
+const sanitizeEmailsToggle = document.getElementById('sanitize-emails-toggle');
+const hideSearchesToggle = document.getElementById('hide-searches-toggle');
 
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
@@ -89,6 +96,7 @@ chrome.storage.local.get(['config'], (result) => {
         if (!currentConfig.identities) currentConfig.identities = DEFAULT_CONFIG.identities;
         if (!currentConfig.uniformMode) currentConfig.uniformMode = DEFAULT_CONFIG.uniformMode;
         if (currentConfig.enabled === undefined) currentConfig.enabled = true;
+        if (!currentConfig.privacy) currentConfig.privacy = DEFAULT_CONFIG.privacy;
     }
     updateUI();
     updatePresetsDropdown();
@@ -126,6 +134,9 @@ function updateUI() {
     } else {
         uniformSettings.classList.add('hidden');
     }
+
+    sanitizeEmailsToggle.checked = currentConfig.privacy.sanitizeEmails;
+    hideSearchesToggle.checked = currentConfig.privacy.hideSearchQueries;
 }
 
 function updateDots() {
@@ -244,6 +255,11 @@ function saveConfig(msg) {
         enabled: uniformToggle.checked,
         title: uniformTitle.value || 'HUSH',
         iconUrl: uniformIcon.value
+    };
+
+    currentConfig.privacy = {
+        hideSearchQueries: hideSearchesToggle.checked,
+        sanitizeEmails: sanitizeEmailsToggle.checked
     };
 
     currentConfig.enabled = masterSwitch.checked;
