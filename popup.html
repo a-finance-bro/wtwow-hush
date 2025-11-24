@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WTWOW HUSH Settings</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1 class="glow-text">WTWOW HUSH v1.0</h1>
+                <div class="master-switch-wrapper">
+                    <label class="switch master">
+                        <input type="checkbox" id="master-switch" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <h2 class="subtitle"><span id="not-indicator" class="hidden">NOT </span>Hiding Unwanted Site Hints</h2>
+        </header>
+
+        <div class="tabs">
+            <div class="tab-btn active" data-tab="obfuscation">Obfuscation Mode</div>
+            <div class="tab-btn" data-tab="identities">Site Identities</div>
+        </div>
+
+        <!-- OBFUSCATION TAB -->
+        <div id="tab-obfuscation" class="tab-content active">
+            <div class="control-group">
+                <label class="section-label">
+                    Mode
+                    <span class="help-icon"
+                        data-help="Choose how to determine which tabs to hide. 'Hide All' hides everything. 'Exclude List' hides everything EXCEPT sites in the list. 'Include List' hides ONLY sites in the list.">?</span>
+                </label>
+                <div class="mode-selector">
+                    <div class="mode-option" data-value="hide_all">
+                        <div class="status-dot" id="dot-hide-all"></div>
+                        <span>Hide All</span>
+                    </div>
+                    <div class="mode-option" data-value="exclude">
+                        <div class="status-dot" id="dot-exclude"></div>
+                        <span>Exclude List</span>
+                    </div>
+                    <div class="mode-option" data-value="include">
+                        <div class="status-dot" id="dot-include"></div>
+                        <span>Include List</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lists-wrapper">
+                <div class="list-column">
+                    <div class="list-header">
+                        <div class="status-dot small" id="list-dot-exclude"></div>
+                        <span>Exclude List</span>
+                        <span class="help-icon"
+                            data-help="Sites here will NOT be hidden in Exclude Mode. Useful for sites you need to see, like your work dashboard.">?</span>
+                    </div>
+                    <textarea id="exclude-textarea" spellcheck="false" placeholder="example.com"></textarea>
+                </div>
+                <div class="list-column">
+                    <div class="list-header">
+                        <div class="status-dot small" id="list-dot-include"></div>
+                        <span>Include List</span>
+                        <span class="help-icon"
+                            data-help="Only sites here WILL be hidden in Include Mode. Useful if you only want to hide specific distractions.">?</span>
+                    </div>
+                    <textarea id="include-textarea" spellcheck="false" placeholder="example.com"></textarea>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="section-label">
+                    Rotation Interval
+                    <span class="help-icon"
+                        data-help="How often to switch the fake identity of inactive tabs. Helps make it look like you are browsing different sites over time.">?</span>
+                </label>
+                <select id="rotation-select" class="neon-select">
+                    <option value="0">Never</option>
+                    <option value="30000">30 Seconds</option>
+                    <option value="60000">1 Minute</option>
+                    <option value="120000">2 Minutes</option>
+                    <option value="300000">5 Minutes</option>
+                    <option value="900000">15 Minutes</option>
+                    <option value="1800000">30 Minutes</option>
+                    <option value="3600000">1 Hour</option>
+                    <option value="10800000">3 Hours</option>
+                    <option value="21600000">6 Hours</option>
+                    <option value="43200000">12 Hours</option>
+                    <option value="86400000">24 Hours</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label class="section-label">
+                    Presets
+                    <span class="help-icon"
+                        data-help="Save your current settings (lists, mode, interval) as a preset to quickly switch between environments (e.g. Home vs Airport).">?</span>
+                </label>
+                <div class="preset-controls">
+                    <select id="preset-select" class="neon-select">
+                        <option value="default">Default</option>
+                    </select>
+                    <button id="save-preset-btn" class="neon-btn secondary small" title="Save as new preset">+</button>
+                    <button id="delete-preset-btn" class="neon-btn secondary small" title="Delete preset">-</button>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="revert-btn" class="neon-btn secondary">Revert to Default</button>
+            </div>
+        </div>
+
+        <!-- IDENTITIES TAB -->
+        <div id="tab-identities" class="tab-content">
+            <div class="control-group">
+                <label class="section-label">
+                    Uniform Mode
+                    <span class="help-icon"
+                        data-help="Force ALL hidden tabs to have the exact same title and icon. Useful for a clean, uniform look.">?</span>
+                </label>
+                <div class="uniform-controls">
+                    <label class="switch">
+                        <input type="checkbox" id="uniform-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="switch-label">Enable Uniform Identity</span>
+                </div>
+                <div id="uniform-settings" class="hidden">
+                    <input type="text" id="uniform-title" class="neon-input" placeholder="Title (e.g. HUSH)">
+                    <input type="text" id="uniform-icon" class="neon-input" placeholder="Icon URL (https://...)">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="section-label">
+                    Custom Identities
+                    <span class="help-icon"
+                        data-help="Manage the pool of fake identities that tabs will rotate through. Add your own or remove existing ones.">?</span>
+                </label>
+                <div class="identities-list" id="identities-list">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="add-identity-form">
+                    <input type="text" id="new-identity-title" class="neon-input" placeholder="Title">
+                    <input type="text" id="new-identity-domain" class="neon-input" placeholder="Domain (for icon)">
+                    <button id="add-identity-btn" class="neon-btn secondary small">+</button>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="revert-identities-btn" class="neon-btn secondary">Revert Identities</button>
+            </div>
+        </div>
+
+        <div class="actions main-actions">
+            <button id="save-btn" class="neon-btn primary">Save Settings</button>
+        </div>
+
+        <div id="status-msg"></div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="help-title">Help</h3>
+            <p id="help-text"></p>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

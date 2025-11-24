@@ -1,0 +1,48 @@
+WTWOW HUSH v1.0 - Design System & Palette
+
+# Color Palette
+--------------------------------------------------
+Backgrounds:
+- Main Background:    #050505 (Deep Black)
+- Panel/Card BG:      #111111 (Dark Gray)
+- Hover State:        #222222 (Lighter Gray)
+
+Accents (Neon):
+- Primary Purple:     #d800ff (Neon Purple)
+- Secondary Purple:   #e040ff (Brighter Purple for hover)
+- Active Green:       #39ff14 (Neon Green)
+- Alert Red:          #ff073a (Neon Red)
+
+Text:
+- Primary Text:       #ffffff (White)
+- Secondary Text:     #cccccc (Light Gray)
+- Muted Text:         #888888 (Dark Gray)
+- Placeholder:        #666666 (Dim Gray)
+
+Borders & Separators:
+- Standard Border:    #333333
+- Active Border:      #d800ff
+
+# Visual Styles
+--------------------------------------------------
+Glow Effects:
+- Text Glow:          text-shadow: 0 0 10px #color
+- Box Glow:           box-shadow: 0 0 10px #color40 (40% opacity)
+
+Typography:
+- Font Family:        'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+- Headings:           Uppercase, Letter-spacing 2px
+- Labels:             Uppercase, Small caps
+
+UI Components:
+- Buttons:            Rounded corners (6px), Neon border/bg, Uppercase text
+- Inputs/Selects:     Dark bg (#111), Light text, Neon focus border
+- Status Dots:        8px circle, Box-shadow glow when active
+- Tabs:               Underline indicator, Text glow on active
+- Modal:              Dark overlay (80%), Neon bordered content box
+
+# "Not" Indicator (Disabled State)
+--------------------------------------------------
+- Color:              #ff073a (Neon Red)
+- Style:              Bold, Glowing, Underlined
+- Animation:          Fade in/out
