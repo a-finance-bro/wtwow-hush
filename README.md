@@ -1,7 +1,7 @@
 # WTWOW HUSH v1.0
 **Hiding Unwanted Site Hints**
 
-WTWOW HUSH is a Chrome Extension designed to enhance your privacy by obfuscating inactive tabs. Whether you're working in a public space like an airport or screen-sharing in a meeting, HUSH ensures that your browsing habits remain private by disguising your tabs as common, innocuous websites.
+WTWOW HUSH is a Chrome Extension designed to enhance your privacy by obfuscating inactive tabs. Whether you're working in a public space like an airport or screen-sharing in a meeting, HUSH ensures that your browsing habits remain private by disguising your tabs as common, innocuous websites, and removing PII such as emails and search queries from tab titles.
 
 ## Features
 
@@ -26,6 +26,8 @@ WTWOW HUSH is a Chrome Extension designed to enhance your privacy by obfuscating
 ### 🛡️ Privacy First
 - **Search Engine Hiding**: Automatically hides search queries on Google, Bing, etc.
 - **Title Sanitization**: Removes email addresses from Gmail and Proton Mail titles to prevent accidental leaks.
+
+![Privacy Feature](pii_feature.png)
 
 ### ⚡ Master Switch
 - Quickly toggle the entire extension on or off with a single click.
@@ -59,4 +61,4 @@ We welcome contributions! Whether it's optimizing the favicon switching speed, f
 
 ## License
 
-AGPL 3.0 License. See [LICENSE](LICENSE) for details.
+MIT License. See [LICENSE](LICENSE) for details.
