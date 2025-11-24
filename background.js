@@ -3,6 +3,7 @@ const DEFAULT_CONFIG = {
   mode: 'exclude',
   excludeList: [
     'mail.google.com',
+    'mail.proton.me'
     'docs.google.com',
     'sheets.google.com',
     'slides.google.com',
