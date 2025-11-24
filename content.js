@@ -33,6 +33,10 @@ function setFavicon(url) {
 }
 
 function getSanitizedTitle(title) {
+    if (!state.config || !state.config.privacy || !state.config.privacy.sanitizeEmails) {
+        return title;
+    }
+
     if (location.hostname.includes('mail.google.com')) {
         const match = title.match(/^(.*?\))/);
         if (match) return match[1];
