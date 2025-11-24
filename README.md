@@ -5,25 +5,25 @@ WTWOW HUSH is a Chrome Extension designed to enhance your privacy by obfuscating
 
 ## Features
 
-### 🔒 Obfuscation Modes
+### Obfuscation Modes
 - **Hide All**: Obfuscates every inactive tab.
 - **Exclude List**: Hides everything EXCEPT the sites you explicitly allow (default).
 - **Include List**: Hides ONLY the sites you specify.
 
-### 🔄 Smart Rotation
+### Smart Rotation
 - Automatically rotates the fake identity of inactive tabs at a set interval (e.g., every 5 minutes).
 - Makes your background tabs look like you are naturally browsing different sites.
 
-### 🎭 Fake Identities
+### Fake Identities
 - Disguises tabs as popular sites like Google, Wikipedia, Weather, New York Times, etc.
 - **Randomized Titles**: Supports dynamic titles like `({randint(1,12)}) Instagram` to mimic notification counts.
 - **Custom Identities**: Add your own fake identities or remove existing ones.
 
-### 🎨 Uniform Mode
+### Uniform Mode
 - Force all hidden tabs to look exactly the same (e.g., a generic "HUSH" tab).
 - Custom title and icon support.
 
-### 🛡️ Privacy First
+### Privacy First
 - **Search Engine Hiding**: Automatically hides search queries on Google, Bing, etc.
 - **Title Sanitization**: Removes email addresses from Gmail and Proton Mail titles to prevent accidental leaks.
 
