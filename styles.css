@@ -498,3 +498,25 @@ input:checked+.slider:before {
     line-height: 1.5;
     color: #ddd;
 }
+
+/* Privacy Controls */
+.privacy-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.privacy-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background: #111;
+    border-radius: 6px;
+    border: 1px solid #333;
+    transition: border-color 0.2s;
+}
+
+.privacy-option:hover {
+    border-color: #444;
+}
