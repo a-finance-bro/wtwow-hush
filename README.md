@@ -59,4 +59,4 @@ We welcome contributions! Whether it's optimizing the favicon switching speed, f
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+AGPL 3.0 License. See [LICENSE](LICENSE) for details.
